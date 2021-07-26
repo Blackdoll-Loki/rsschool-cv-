@@ -1,3 +1,3 @@
 https://github.com/Blackdoll-Loki/rsschool-cv/blob/gh-pages/c
 https://Blackdoll-Loki.github.io/rsschool-cv/cv
-https://blackdoll-loki.github.io/rsschool-cv-html/
+https://blackdoll-loki.github.io/rsschool-cv/
