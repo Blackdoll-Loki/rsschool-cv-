@@ -21,3 +21,8 @@ main {
 footer > a {
  display: flexbox;
 }
+
+footer > img {
+ width: 70px;
+ height: 100px:
+}
