@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Roboto;
+     src: url("assets/fonts/Roboto-Regular.ttf");
+   }
+
+@font-face {
+    font-family: Roboto;
+    src: url("assets/fonts/Roboto-Thin.ttf");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ .main-container {
+     margin: 0 auto;
+     max-width: 1440px;
+     width: calc(100% - 40px);
+ }
+
+ .header-container {
+    display: flex;
+    background-color: black;
+ }
+ .logo {
+    background-image: url(assets/svg/Vector.svg);
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-weight: 400px;
+ }
+
+header>div>nav>ul>li {
+    list-style: none;
+    height: 50px;
+    padding: 38px;
+}
+
+header>div>nav>ul {
+    display: flex;
+    max-width: 720px;
+}
+
+footer {
+    background-color: black;
+}
+
+footer>div>nav>ul>li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-title {
+    font-size: 80px;
+    font-weight: 400px;
+    color: whitesmoke;
+}
+
+.louvre-photo {
+    background-position: calc(100% - 20px) calc(100% - 10px);
+}
+
+#welcome {
+    background-color: black;
+}
