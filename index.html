@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="keys">
+        <div data-key="65" class="key">
+            <kbd>A</kbd>
+            <span class="sound">amb</span>
+        </div>
+        <div data-key="83" class="key">
+            <kbd>S</kbd>
+            <span class="sound">appr</span>
+        </div>
+        <div data-key="68" class="key">
+            <kbd>D</kbd>
+            <span class="sound">glass</span>
+        </div>
+        <div data-key="70" class="key">
+            <kbd>F</kbd>
+            <span class="sound">clang</span>
+        </div>
+        <div data-key="71" class="key">
+            <kbd>G</kbd>
+            <span class="sound">hit</span>
+        </div>
+        <div data-key="72" class="key">
+            <kbd>H</kbd>
+            <span class="sound">hit2</span>
+        </div>
+        <div data-key="74" class="key">
+            <kbd>J</kbd>
+            <span class="sound">pull</span>
+        </div>
+        <div data-key="75" class="key">
+            <kbd>K</kbd>
+            <span class="sound">ding</span>
+        </div>
+        <div data-key="76" class="key">
+            <kbd>L</kbd>
+            <span class="sound">door</span>
+        </div>
+    </div>
+    <audio data-key="65" src="hits/ambience.wav"></audio>
+    <audio data-key="83" src="hits/approach.wav"></audio>
+    <audio data-key="68" src="hits/backspin-glass.wav"></audio>
+    <audio data-key="70" src="hits/backwards-clang.wav"></audio>
+    <audio data-key="71" src="hits/bamboo-fell-on-floor-hit.wav"></audio>
+    <audio data-key="72" src="hits/can-wiggle-hit.wav"></audio>
+    <audio data-key="74" src="hits/cokeringpull.wav"></audio>
+    <audio data-key="75" src="hits/ding2.wav"></audio>
+    <audio data-key="76" src="hits/electro-door-slam.wav"></audio>
+    <script>
+
+        function playSound(event){
+            const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+            const key = document.querySelector(`.key[data-key="${event.keyCode}"]`);
+            if(!audio) return;
+            audio.currentTime = 0;
+            audio.play();
+            key.classList.add('playing');
+        };
+        
+        window.addEventListener('keydown', playSound);
+        function removeTransition(event){
+            if (event.propertyName !== 'transform') return;
+            this.classList.remove('playing');
+        }
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+        window.addEventListener('keydown', playSound);
+    </script>
+</body>
+</html>
