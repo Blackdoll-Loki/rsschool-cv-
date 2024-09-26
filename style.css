@@ -1,0 +1,28 @@
+header > div {
+ display: inline-flex;
+}
+
+header > div > h1 {
+ box-sizing: border-box;
+ padding-left: 200px;
+}
+
+body {
+ background-color: #c4f7a8;
+}
+
+main {
+ box-sizing: border-box; 
+ padding-left: 500px;
+ padding-right: 500px;
+ padding-bottom: 110px;
+}
+
+footer > a {
+ display: flexbox;
+}
+
+footer > img {
+ width: 70px;
+ height: 100px:
+}
